@@ -1,6 +1,7 @@
 .sidebar {
   width: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto; /* ✅ Scroll vertically if content exceeds screen */
   background-color: #f1f1f1;
   height: 100vh;
   position: fixed;
@@ -8,6 +9,7 @@
   left: 0;
   padding-top: 3.5rem;
   transition: 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar.open {
@@ -23,4 +25,15 @@
 .sidebar li {
   padding: 0.5rem 0;
   cursor: pointer;
+}
+
+/*  @media is used for making page responsive mrans same page can be viewed in mobile as well as desktop  */
+@media (max-width: 768px) {
+  .sidebar.open {
+    width: 100%; /* Full screen on mobile */
+  }
+
+  .sidebar {
+    z-index: 1000;
+  }
 }
