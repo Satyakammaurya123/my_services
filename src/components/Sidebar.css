@@ -27,6 +27,22 @@
   cursor: pointer;
 }
 
+/* ✅ Add link styling */
+.sidebar li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, font-weight 0.2s ease;
+}
+
+/* ✅ Hover effect: light pink background and bold text */
+.sidebar li a:hover {
+  background-color: #ffe6f0; /* very light pink */
+  font-weight: bold;
+}
+
 /*  @media is used for making page responsive mrans same page can be viewed in mobile as well as desktop  */
 @media (max-width: 768px) {
   .sidebar.open {
