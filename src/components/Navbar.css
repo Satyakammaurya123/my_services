@@ -5,14 +5,14 @@
   color: white;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: space-between;
   padding: 0 1.5rem;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .menu-icon {
@@ -27,8 +27,100 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 100%;
+  flex-grow: 1;
 }
+
+.profile-container {
+  position: relative;
+  cursor: pointer; /* Keeps pointer on profile icon */
+}
+
+.profile-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 1rem;
+}
+
+.profile-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Dropdown styles */
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #ffffff;
+  color: #333;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  width: 220px;
+  display: none;
+  flex-direction: column;
+  padding: 0.5rem;
+  z-index: 2000;
+}
+
+.profile-container.open .dropdown-menu {
+  display: flex;
+}
+
+/* Profile section inside dropdown */
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+  cursor: pointer; /* NEW: Pointer on profile section in dropdown */
+}
+
+.dropdown-header img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.dropdown-header .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-header .info .name {
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.dropdown-header .info .desc {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+/* Dropdown options */
+.dropdown-item {
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer; /* ✅ Pointer on options */
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #ffe6f0;
+  font-weight: bold;
+}
+
+.dropdown-header:hover {
+  background-color: #ffe6f0; /* same pink as options */
+  border-radius: 6px;
+}
+
 
 @media (max-width: 480px) {
   .navbar h1 {
