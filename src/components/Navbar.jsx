@@ -51,8 +51,8 @@ export default function Navbar({ toggleSidebar }) {
           <div className="dropdown-header">
             <img src={profileImg} alt="Profile" />
             <div className="info">
-              <div className="name">John Doe</div>
-              <div className="desc">Web Developer</div>
+              <div className="name">Satyakam Maurya</div>
+              <div className="desc">Web Developer and Data Engineer</div>
             </div>
           </div>
           <div className="dropdown-item">Option 1</div>
