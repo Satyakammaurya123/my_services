@@ -1,8 +1,8 @@
 import './Navbar.css';
 import { useState, useEffect, useRef } from 'react';
 import profileImg from '../assets/profile_pic_icon.png';
+import { Link } from 'react-router-dom';
 
-// useRef and useEffect to detect clicks outside of .profile-container and close the dropdown accordingly.
 
 export default function Navbar({ toggleSidebar }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -30,6 +30,14 @@ export default function Navbar({ toggleSidebar }) {
       </div>
       <h1>My Services E-Commerce</h1>
 
+      {/* New navigation links before profile icon */}
+      <div className="nav-links">
+        <Link to="/" className="nav-link">Home</Link>
+        <Link to="/cart" className="nav-link">Cart</Link>
+        <Link to="/contact" className="nav-link">Contact</Link>
+      </div>
+
+
       <div
         className={`profile-container ${isDropdownOpen ? 'open' : ''}`}
         onClick={toggleDropdown}
@@ -43,8 +51,8 @@ export default function Navbar({ toggleSidebar }) {
           <div className="dropdown-header">
             <img src={profileImg} alt="Profile" />
             <div className="info">
-              <div className="name">John Doe</div>
-              <div className="desc">Web Developer</div>
+              <div className="name">Satyakam Maurya</div>
+              <div className="desc">Web Developer and Data Engineer</div>
             </div>
           </div>
           <div className="dropdown-item">Option 1</div>
@@ -52,7 +60,7 @@ export default function Navbar({ toggleSidebar }) {
           <div className="dropdown-item">Option 3</div>
           <div className="dropdown-item">Option 4</div>
           <div className="dropdown-item">Option 5</div>
-          <div className="dropdown-item">Option 6</div>
+          <div className="dropdown-item">Sign out</div>
         </div>
       </div>
     </nav>

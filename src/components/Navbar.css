@@ -121,6 +121,24 @@
   border-radius: 6px;
 }
 
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.nav-link {
+  color: white;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #fbb6ce; /* Soft pink hover */
+}
+
 
 @media (max-width: 480px) {
   .navbar h1 {
