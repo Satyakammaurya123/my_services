@@ -46,7 +46,7 @@
 /*  @media is used for making page responsive mrans same page can be viewed in mobile as well as desktop  */
 @media (max-width: 768px) {
   .sidebar.open {
-    width: 100%; /* Full screen on mobile */
+    width: 200px; /* Full screen on mobile */
   }
 
   .sidebar {
