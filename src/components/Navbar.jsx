@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from 'react';
 import profileImg from '../assets/profile_pic_icon.png';
 import { Link } from 'react-router-dom';
 
-
 export default function Navbar({ toggleSidebar }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const profileRef = useRef(null);
@@ -28,7 +27,16 @@ export default function Navbar({ toggleSidebar }) {
       <div className="menu-icon" onClick={toggleSidebar}>
         &#9776;
       </div>
+      
       <h1>My Services E-Commerce</h1>
+
+      {/* 🔍 Search Box added just after the heading */}
+      <div className="search-box">
+        <input type="text" placeholder="Search..." />
+        <button className="search-btn">
+          🔍
+        </button>
+      </div>
 
       {/* New navigation links before profile icon */}
       <div className="nav-links">
@@ -36,7 +44,6 @@ export default function Navbar({ toggleSidebar }) {
         <Link to="/cart" className="nav-link">Cart</Link>
         <Link to="/contact" className="nav-link">Contact</Link>
       </div>
-
 
       <div
         className={`profile-container ${isDropdownOpen ? 'open' : ''}`}
