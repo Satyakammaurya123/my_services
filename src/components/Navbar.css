@@ -5,7 +5,8 @@
   color: white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* changed from space-between so items can sit together on the left */
+  justify-content: flex-start;
   padding: 0 1.5rem;
   position: fixed;
   top: 0;
@@ -27,7 +28,8 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  flex-grow: 1;
+  /* removed flex-grow so the search box can sit right next to the title */
+  /* flex-grow: 1; */
 }
 
 .profile-container {
@@ -126,6 +128,8 @@
   gap: 1rem;
   align-items: center;
   margin-right: 1rem;
+  /* push nav links (and the following profile) to the far right */
+  margin-left: auto;
 }
 
 .nav-link {
@@ -139,6 +143,61 @@
   color: #fbb6ce; /* Soft pink hover */
 }
 
+/* 🔎 Search bar container (matches your JSX: class="search-box") */
+.search-box {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem; /* sits right next to the title */
+  background-color: white;
+  border-radius: 6px;
+  padding: 0 0.5rem;
+  height: 34px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.9rem;
+  width: 160px;
+  color: #111827;
+  background: transparent;
+}
+
+.search-box .search-btn {
+  border: none;
+  background: transparent;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 0.25rem;
+  color: #555;
+  transition: color 0.2s ease;
+}
+
+.search-box .search-btn:hover {
+  color: #fbb6ce; /* pink hover */
+}
+
+/* ✅ Mobile responsiveness (optional: keep navbar neat on small screens) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;             /* allow the search to wrap below if needed */
+    padding-bottom: 0.5rem;
+  }
+
+  .search-box {
+    order: 3;                 /* move search under the title on small screens */
+    width: 100%;
+    margin: 0.5rem 0 0 0;     /* full-width below */
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+}
 
 @media (max-width: 480px) {
   .navbar h1 {
