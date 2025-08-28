@@ -12,6 +12,7 @@ const Contact = () => {
         <p>
           Here will paste my linkdin , fitwithsatya wala insta, and other pics also, also will make 
           background pic as page ka wallpaper
+          
         </p>
       </div>
     </div>
