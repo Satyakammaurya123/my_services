@@ -4,6 +4,7 @@ import Option1 from '../pages/Option1';
 import Option2 from '../pages/Option2';
 import Option3 from '../pages/Option3';
 import Contact from '../pages/Contact'; // ✅ Added Contact
+import Cart from '../pages/Cart';       // ✅ Added Cart
 
 // Add Option4, Option5
 
@@ -15,6 +16,7 @@ export default function AppRoutes() {
       <Route path="/option2" element={<Option2 />} />
       <Route path="/option3" element={<Option3 />} />
       <Route path="/contact" element={<Contact />} /> {/* ✅ Added Contact route */}
+      <Route path="/cart" element={<Cart />} />       {/* ✅ Added Cart route */}
 
       {/* Add the rest similarly */}
     </Routes>
