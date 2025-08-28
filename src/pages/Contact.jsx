@@ -9,6 +9,10 @@ const Contact = () => {
           This is the Contact Page. You can place your contact form, details, or
           any custom content here.
         </p>
+        <p>
+          Here will paste my linkdin , fitwithsatya wala insta, and other pics also, also will make 
+          background pic as page ka wallpaper
+        </p>
       </div>
     </div>
   );

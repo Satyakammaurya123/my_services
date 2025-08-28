@@ -1,0 +1,68 @@
+.cart-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Right side (Orders box) */
+.cart-orders {
+  flex: 1;
+  max-width: 40%;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.orders-box {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.proceed-btn {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.proceed-btn:hover {
+  background: #0056b3;
+}
+
+/* Left side (Suggestions) */
+.cart-suggestions {
+  flex: 1;
+  max-width: 55%;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  background: #fdfdfd;
+}
+
+.suggestion-box {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 5px;
+  background: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cart-container {
+    flex-direction: column;
+  }
+
+  .cart-orders,
+  .cart-suggestions {
+    max-width: 100%;
+  }
+}
