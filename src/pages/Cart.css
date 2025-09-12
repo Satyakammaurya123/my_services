@@ -3,6 +3,18 @@
   justify-content: space-between;
   padding: 20px;
   gap: 20px;
+  flex-wrap: wrap; /* ✅ ensures responsiveness */
+}
+
+/* Left side (Suggestions) */
+.cart-suggestions {
+  flex: 1;
+  max-width: 55%;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  background: #fdfdfd;
+  order: 1; /* ✅ always left */
 }
 
 /* Right side (Orders box) */
@@ -13,6 +25,7 @@
   padding: 20px;
   border-radius: 8px;
   background: #f9f9f9;
+  order: 2; /* ✅ always right */
 }
 
 .orders-box {
@@ -37,16 +50,6 @@
   background: #0056b3;
 }
 
-/* Left side (Suggestions) */
-.cart-suggestions {
-  flex: 1;
-  max-width: 55%;
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 8px;
-  background: #fdfdfd;
-}
-
 .suggestion-box {
   border: 1px solid #ccc;
   padding: 15px;
@@ -64,5 +67,6 @@
   .cart-orders,
   .cart-suggestions {
     max-width: 100%;
+    order: unset; /* ✅ stack naturally on small screens */
   }
 }
