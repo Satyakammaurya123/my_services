@@ -1,18 +1,35 @@
 .contact-container {
+  min-height: 100vh; /* Full page */
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 60px); /* Adjust for navbar height */
-  background-color: #f9fafb;
-  padding: 2rem;
+  background: linear-gradient(to right, #fdf6e3, #e6f0ff); /* Smoky yellow + light blue */
+  padding: 40px;
 }
 
 .contact-box {
-  background-color: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  font-size: 1rem;
+  width: 400px;
+}
+
+.social-logos {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-logos img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.social-logos img:hover {
+  transform: scale(1.1);
 }
