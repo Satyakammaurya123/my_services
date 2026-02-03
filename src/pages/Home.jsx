@@ -9,11 +9,11 @@ export default function Home() {
       {/* ✅ Six responsive boxes below */}
       <div className="home-boxes">
         <div className="home-box">
-          <h3>My Services</h3>
+          <h3>PlayStation</h3>
           <p>
-            Explore a variety of personalized offerings curated just for you.
-            Here you will get all the services related to your health complete healthcare product and curated advices to follow.
-            We will help you in your weight loss journey and fill new energy inside you.
+            Dive into the world of gaming and entertainment.
+            Explore PlayStation content, games, experiences, and immersive digital fun
+            that refreshes the mind and fuels creativity.
           </p>
         </div>
 
@@ -37,11 +37,11 @@ export default function Home() {
 
         {/* ✅ New 4th box */}
         <div className="home-box">
-          <h3>PlayStation</h3>
+          <h3>My Services</h3>
           <p>
-            Dive into the world of gaming and entertainment.
-            Explore PlayStation content, games, experiences, and immersive digital fun
-            that refreshes the mind and fuels creativity.
+            Explore a variety of personalized offerings curated just for you.
+            Here you will get all the services related to your health complete healthcare product and curated advices to follow.
+            We will help you in your weight loss journey and fill new energy inside you.
           </p>
         </div>
 
@@ -66,3 +66,5 @@ export default function Home() {
     </div>
   );
 }
+
+
