@@ -31,7 +31,7 @@
 
 /* 🚀 Smooth 1.2x hover effect */
 .home-box:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
   z-index: 10;
 }
