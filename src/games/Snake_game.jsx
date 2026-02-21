@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Snake_game.css';
 
+// adding changes
 const gridSize = 20;
 const tileCount = 20;
 
