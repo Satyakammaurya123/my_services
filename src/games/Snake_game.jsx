@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Snake_game.css';
 
 const gridSize = 20;
@@ -6,10 +7,13 @@ const tileCount = 20;
 
 export default function Snake_game() {
 
+  const navigate = useNavigate();
   const canvasRef = useRef(null);
+
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [gameStarted, setGameStarted] = useState(false);
+  const [gameOver, setGameOver] = useState(false);
   const [score, setScore] = useState(0);
 
   const [highScoreData, setHighScoreData] = useState(
@@ -28,6 +32,7 @@ export default function Snake_game() {
     velocity.current = { x: 1, y: 0 };
     setScore(0);
     generateFood();
+    setGameOver(false);
   };
 
   const generateFood = () => {
@@ -46,7 +51,6 @@ export default function Snake_game() {
       y: snake.current[0].y + velocity.current.y
     };
 
-    // Collision
     if (
       head.x < 0 || head.x >= tileCount ||
       head.y < 0 || head.y >= tileCount ||
@@ -65,7 +69,6 @@ export default function Snake_game() {
       snake.current.pop();
     }
 
-    // Draw
     ctx.fillStyle = "#111";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -80,25 +83,19 @@ export default function Snake_game() {
 
   const endGame = () => {
     if (score > highScoreData.score) {
-      const newHigh = {
-        name: name,
-        score: score
-      };
+      const newHigh = { name, score };
       localStorage.setItem("snakeHighScoreData", JSON.stringify(newHigh));
       setHighScoreData(newHigh);
     }
-
-    alert(`Game Over! Your score: ${score}`);
-    resetGame();
+    setGameOver(true);
   };
 
   useEffect(() => {
-    if (!gameStarted) return;
+    if (!gameStarted || gameOver) return;
     const interval = setInterval(gameLoop, 120);
     return () => clearInterval(interval);
   });
 
-  // Keyboard controls
   useEffect(() => {
     const handleKey = (e) => {
       if (e.key === "ArrowUp" && velocity.current.y !== 1)
@@ -149,7 +146,7 @@ export default function Snake_game() {
         </div>
       ) : (
         <div className="snake-container">
-          <div className="snake-card">
+          <div className="snake-card snake-game-wrapper">
             <h3>Score: {score}</h3>
             <h4>
               Highest Score: {highScoreData.score}
@@ -163,13 +160,31 @@ export default function Snake_game() {
               className="snake-canvas"
             />
 
-            {/* Clean D-Pad Layout */}
-            <div className="controls">
-              <button className="up" onClick={() => velocity.current = { x: 0, y: -1 }}>⬆</button>
-              <button className="left" onClick={() => velocity.current = { x: -1, y: 0 }}>⬅</button>
-              <button className="right" onClick={() => velocity.current = { x: 1, y: 0 }}>➡</button>
-              <button className="down" onClick={() => velocity.current = { x: 0, y: 1 }}>⬇</button>
-            </div>
+            {!gameOver && (
+              <div className="controls">
+                <button className="up" onClick={() => velocity.current = { x: 0, y: -1 }}>⬆</button>
+                <button className="left" onClick={() => velocity.current = { x: -1, y: 0 }}>⬅</button>
+                <button className="right" onClick={() => velocity.current = { x: 1, y: 0 }}>➡</button>
+                <button className="down" onClick={() => velocity.current = { x: 0, y: 1 }}>⬇</button>
+              </div>
+            )}
+
+            {gameOver && (
+              <div className="game-over-overlay">
+                <div className="game-over-box">
+                  <h3>Game Over</h3>
+                  <p>Your Score: {score}</p>
+
+                  <button onClick={resetGame}>
+                    Play Again
+                  </button>
+
+                  <button onClick={() => navigate('/game')}>
+                    Back to Games
+                  </button>
+                </div>
+              </div>
+            )}
 
           </div>
         </div>
