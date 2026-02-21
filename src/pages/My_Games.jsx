@@ -12,9 +12,13 @@ export default function My_Games() {
 
       <div className="games-boxes">
 
-        <div className="games-box">
-          <h3>PS5 Games</h3>
-          <p>Explore the latest next-gen PlayStation 5 titles.</p>
+        <div 
+          className="games-box"
+          onClick={() => navigate('/snake')}
+          style={{ cursor: 'pointer' }}
+        >
+          <h3>Snake Game</h3>
+          <p>Click here to play Snake Game and make the highest score.</p>
         </div>
 
         <div className="games-box">

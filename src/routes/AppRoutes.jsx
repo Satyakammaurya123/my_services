@@ -8,6 +8,10 @@ import Cart from '../pages/Cart';       // ✅ Added Cart
 import BetterIndia from "../pages/BetterIndia";
 import My_Games from '../pages/My_Games';
 
+// now will also import from other folder like \games
+import Snake_game from '../games/Snake_game';
+
+
 
 // Add Option4, Option5
 //sidebar me bhi chnages krne padte hai
@@ -22,6 +26,8 @@ export default function AppRoutes() {
       <Route path="/cart" element={<Cart />} />       {/* ✅ Added Cart route */}
       <Route path="/betterIndia" element={<BetterIndia />} />
       <Route path="/game" element={<My_Games />} />
+      <Route path="/snake" element={<Snake_game />} />
+
 
       {/* Add the rest similarly */}
     </Routes>
