@@ -1,6 +1,10 @@
 import './Home.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+
+  const navigate = useNavigate();
+
   return (
     <div className="home">
       <h2>Welcome to the Home Page</h2>
@@ -8,7 +12,11 @@ export default function Home() {
 
       {/* ✅ Six responsive boxes below */}
       <div className="home-boxes">
-        <div className="home-box">
+        <div 
+          className="home-box"
+          onClick={() => navigate('/game')}
+          style={{ cursor: 'pointer' }}
+        >
           <h3>PlayStation</h3>
           <p>
             Dive into the world of gaming and entertainment.
@@ -41,7 +49,7 @@ export default function Home() {
           <p>
             Explore a variety of personalized offerings curated just for you.
             Here you will get all the services related to your health complete healthcare product and curated advices to follow.
-            We will help you in your weight loss journey and fill new energy inside you.
+            We will help you in your weight loss journey and filling new energy inside you.
           </p>
         </div>
 
@@ -66,5 +74,3 @@ export default function Home() {
     </div>
   );
 }
-
-
