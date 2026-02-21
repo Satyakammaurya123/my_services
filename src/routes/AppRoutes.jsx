@@ -6,6 +6,8 @@ import Option3 from '../pages/Option3';
 import Contact from '../pages/Contact'; // ✅ Added Contact
 import Cart from '../pages/Cart';       // ✅ Added Cart
 import BetterIndia from "../pages/BetterIndia";
+import My_Games from '../pages/My_Games';
+
 
 // Add Option4, Option5
 //sidebar me bhi chnages krne padte hai
@@ -19,6 +21,7 @@ export default function AppRoutes() {
       <Route path="/contact" element={<Contact />} /> {/* ✅ Added Contact route */}
       <Route path="/cart" element={<Cart />} />       {/* ✅ Added Cart route */}
       <Route path="/betterIndia" element={<BetterIndia />} />
+      <Route path="/game" element={<My_Games />} />
 
       {/* Add the rest similarly */}
     </Routes>

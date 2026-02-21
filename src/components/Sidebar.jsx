@@ -12,6 +12,9 @@ export default function Sidebar({ isOpen }) {
         <li><Link to="/betterIndia">BetterIndia</Link></li>
 
         <li><Link to="/option5">Muktivedant</Link></li>
+        {/* ✅ NEW - Play Games */}
+        <li><Link to="/game">Play Games</Link></li>
+
       </ul>
     </div>
   );
